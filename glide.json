@@ -1,0 +1,26 @@
+{
+  "kind": "column",
+  "name": "Chart",
+  "description": "",
+  "author": "Manu.n",
+  "params": [
+    {
+      "name": "config",
+      "displayName": "Config",
+      "type": "string"
+    },
+    {
+      "name": "width",
+      "displayName": "Width",
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "displayName": "Height",
+      "type": "number"
+    }
+  ],
+  "result": {
+    "type": "uri"
+  }
+}

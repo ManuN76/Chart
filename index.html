@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Glide Yes-Code</title>
+</head>
+<div>
+  <span id="result"></span>
+</div>
+<script src="function.js"></script>
+<script src="driver.js"></script>
+
+
+<script>
+  // TEST DEBUG !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  testDebug();
+
+  async function testDebug() {
+  let config = { type: "string", 
+  value: `{
+  type: 'pie',
+  data: {
+    datasets: [
+      {
+        data: [10,20,30],
+        backgroundColor: [
+          '#ff7560',
+          '#7ED3B2',
+          '#FFCDA3',
+        ],
+ borderColor:'black',
+borderWidth: 0.5,
+      },
+    ],
+    labels: ['label1','label2','label3']
+    },
+   options: { 
+            maintainAspectRatio: false,
+            responsive: true,
+            legend: {
+                labels: {
+                    fontColor: "red",
+                    fontSize: 12
+                }
+            },
+            plugins: {
+      datalabels: {
+        color: "black",
+      }
+   }
+}
+}` };
+  
+  let width = {type: "number", value:''};
+  let height = {type: "number", value:''}
+  let result = await window.function(config, width, height);
+  //document.getElementById("result").innerHTML = result;
+
+  let result2 = decodeURIComponent(result);
+  result2 = result2.replace('data:text/html;charset=utf-8,', '');
+  document.write(result2);
+  }
+</script>
+</body>
+
+</html>
